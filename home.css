@@ -1,0 +1,114 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url("main bg.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    padding: 40px 30px;
+    background-color: #333;
+    border-radius: 15px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
+    width: 80%;
+    max-width: 600px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Hero Image */
+.hero-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Main Title */
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+/* Subtitle */
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 35px;
+    color: #fff;
+    font-weight: 300;
+}
+
+/* Button Container */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Buttons */
+.button {
+    text-decoration: none;
+    background-color: #ffcc00;
+    color: #fff;
+    padding: 16px 32px;
+    font-size: 1.3em;
+    border-radius: 8px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: #e65c00;
+    transform: translateY(-6px);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Button Active Effect */
+.button:active {
+    transform: translateY(0);
+}
+
+/* Button Icon Styling */
+.button-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

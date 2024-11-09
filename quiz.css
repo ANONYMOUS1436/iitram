@@ -32,7 +32,7 @@
   /* Title */
   h1 {
     font-size: 2.5rem;
-    color: #FFA500; 
+    color: #ffcc00; 
     margin-bottom: 20px;
     text-align: center;
     font-family: 'Helvetica', sans-serif;
@@ -68,7 +68,7 @@
   }
   
   label:hover {
-    background-color: #FFA500; 
+    background-color: #ffcc00; 
     color: #333;
   }
   
@@ -78,7 +78,7 @@
   
   /* Submit, Next, and Skip Button Styling */
   button {
-    background-color: #FFA500; 
+    background-color: #ffcc00; 
     color: white;
     border: none;
     padding: 12px 25px;
@@ -111,7 +111,7 @@
   
   .result-container h2 {
     font-size: 2.5rem;
-    color: #FFA500;
+    color: #ffcc00;
     margin-bottom: 20px;
   }
   
@@ -139,7 +139,7 @@
   }
   
   #educational-link:hover {
-    background-color: #FFA500; 
+    background-color: #ffcc00; 
     color: #333;
   }
   @media (max-width: 768px) {
