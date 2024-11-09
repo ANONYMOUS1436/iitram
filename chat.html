@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sex Education Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .chat-container {
+      width: 400px;
+      max-width: 100%;
+      border: 2px solid #007BFF;
+      border-radius: 8px;
+      background-color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-box {
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      max-height: 300px;
+    }
+
+    .message {
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background-color: #e1e1e1;
+    }
+
+    .bot-message {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .user-message {
+      background-color: #e7e7e7;
+      text-align: right;
+    }
+
+    .user-input {
+      display: flex;
+    }
+
+    #user-input {
+      flex-grow: 1;
+      padding: 10px;
+      border: 2px solid #007BFF;
+      border-radius: 4px;
+    }
+
+    #send-btn {
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    #send-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-box" id="chat-box">
+      <div class="message bot-message">
+        <p>Hi! I'm your Sex Education Chatbot. Ask me anything!</p>
+      </div>
+    </div>
+    <div class="user-input">
+      <input type="text" id="user-input" placeholder="Type your question..." />
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Predefined answers for basic questions
+    const answers = {
+      "What is puberty?": "Puberty is the process of physical changes through which a child's body matures into an adult body capable of sexual reproduction.",
+      "What is consent?": "Consent means giving permission for something to happen or agreeing to do something. It is essential in any sexual activity.",
+      "What is contraception?": "Contraception is the use of methods or devices to prevent pregnancy. Examples include birth control pills, condoms, etc.",
+      "What is sex education?": "Sex education provides knowledge about human sexuality, including topics like reproduction, relationships, consent, and sexual health.",
+      "How do I know if I'm ready for sex?": "Readiness for sex is a personal decision. It is important to feel emotionally and physically prepared, and always practice consent and safe sex.",
+      "Why is safe sex important?": "Safe sex helps prevent STIs and unintended pregnancies, promoting overall sexual health.",
+      "What is the menstrual cycle?":"The menstrual cycle is the monthly process in which a woman’s body prepares for pregnancy, involving the release of an egg and the shedding of the uterine lining.",
+      "What are the different types of contraception?":"Types include condoms, birth control pills, IUDs, implants, and sterilization.",
+      "What are the signs of pregnancy?": "Common signs include missed periods, nausea, fatigue, and changes in breasts.",
+      "What are STIs?": "STIs (sexually transmitted infections) are infections spread primarily through sexual contact. Some common STIs are chlamydia, gonorrhea, and HIV."
+    };
+
+    const chatBox = document.getElementById("chat-box");
+    const userInput = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-btn");
+
+    // Handle the user's input when the send button is clicked
+    sendBtn.addEventListener("click", () => {
+      const question = userInput.value.trim();
+      if (question) {
+        // Display the user's message in the chat
+        displayMessage(question, 'user');
+
+        // Process the question and return an answer
+        const answer = getAnswer(question);
+
+        // Display the bot's response in the chat
+        displayMessage(answer, 'bot');
+
+        // Clear the input field
+        userInput.value = '';
+      }
+    });
+
+    // Function to display a message in the chat box
+    function displayMessage(message, sender) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message');
+      messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+      messageDiv.innerHTML = `<p>${message}</p>`;
+      chatBox.appendChild(messageDiv);
+
+      // Scroll to the bottom of the chat
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    // Function to get an answer for the question
+    function getAnswer(question) {
+      const lowerCaseQuestion = question.toLowerCase();
+      
+      // Search for a matching answer
+      for (const [key, value] of Object.entries(answers)) {
+        if (lowerCaseQuestion.includes(key.toLowerCase())) {
+          return value;
+        }
+      }
+
+      // If no match is found, return a default response
+      return "Sorry, I don't have an answer for that question. Please consult a professional.";
+    }
+  </script>
+</body>
+</html>

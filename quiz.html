@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sex Education Awareness Quiz</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body background="bg.png">
+
+  <div class="container">
+    <h1>Sex Education Awareness Quiz</h1>
+    <div id="quiz-container">
+      <div id="question-container">
+      </div>
+      <button id="next-btn" onclick="nextQuestion()">Next Question</button>
+      <button id="skip-btn" onclick="skipQuestion()">Skip Question</button>
+      <button id="submit-btn" onclick="submitQuiz()" style="display: none;">Submit Quiz</button>
+    </div>
+
+    <div id="result" class="result-container" style="display: none;">
+      <h2>Your Results</h2>
+      <p>Correct Answers: <span id="score">0</span></p>
+      <p>Incorrect Answers: <span id="incorrect">0</span></p>
+      <p>Skipped Questions: <span id="skipped">0</span></p>
+      <button onclick="restartQuiz()">Restart Quiz</button>
+      <button id="educational-link" onclick="redirectToEducationSite()" style="display: none;">Learn More About Sex Education</button>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
